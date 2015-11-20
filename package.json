@@ -21,9 +21,9 @@
     "compile": "mkdir -p dist && babel src --out-file dist/index.js",
     "debug": "mkdir -p dist && babel --source-maps inline src --out-file dist/index.js",
     "test": "npm run compile && babel-node test/test-echo.js | tap-spec",
-    "test-es5-compile": "babel --source-maps inline test/test-echo.js --out-file test/test-echo-es5.js",
-    "test-browserify": "browserify test/test-echo-es5.js > test/test-echo-browser.js",
-    "testb": "npm run test-es5-compile && npm run test-browserify && open test/index.html"
+    "test-es5-compile": "mkdir -p test-dist && babel --source-maps inline test/test-echo.js --out-file test-dist/test-echo-es5.js",
+    "test-browserify": "browserify test-dist/test-echo-es5.js > test-dist/test-echo-browser.js",
+    "testb": "npm run test-es5-compile && npm run test-browserify && open test-index.html"
   },
   "repository": {
     "type": "git",
